@@ -8,12 +8,11 @@ class Aluno(models.Model):
         verbose_name = 'Nome'
     )
 
-    idade = models.CharField(
-        max_length = 10,
+    idade = models.IntegerField(
         verbose_name = 'Idade'
     )
 
-    email = models.CharField(
+    email = models.EmailField(
         max_length=255,
         verbose_name ='E-mail',
         unique = True

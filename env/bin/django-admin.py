@@ -1,4 +1,4 @@
-#!/home/ubuntu/Documentos/django-rest/env/bin/python3
+#!/home/ubuntu/Documentos/salaDeAula/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
