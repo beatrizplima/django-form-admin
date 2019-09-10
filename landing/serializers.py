@@ -7,7 +7,6 @@ class ProfessorDataSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     nome = serializers.CharField(read_only=True)
 
-
 class AlunoSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     nome = serializers.CharField(max_length=255, required=True)
@@ -30,3 +29,7 @@ class AlunoSerializer(serializers.Serializer):
         instance.prof_favorito = professor
         instance.save()
         return instance
+
+class AlunoLightSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    nome = serializers.CharField()

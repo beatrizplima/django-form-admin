@@ -41,5 +41,12 @@ class AlunoDetails(views.APIView):
 
     def get(self, request, id):
         aluno = self.get_object(id)
-        serializer = AlunoSerializer(aluno)
+        serializer = AlunoLightSerializer(aluno)
         return Response(serializer.data, status = status.HTTP_200_OK)
+
+    def put(self, request, id):
+        aluno = self.get_object(id)
+        serializer = AlunoSerializer(aluno, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
